@@ -1,0 +1,246 @@
+.fixedleft {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 10;
+    
+    background-color: skyblue;
+    height: 500px;
+    border-radius: 10px;
+}
+.sidenav{
+    background-color: skyblue;
+    height: 500px;
+    border-radius: 10px;
+}
+.fixedtop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    z-index: 1030;
+    height: 10%;
+}
+.contents{
+    margin-left: 30%;
+    margin-top: 120px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .cardh2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .cardp {
+    
+    font-size: 16px;
+    color: #555;
+  }
+.add{
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: skyblue;
+    cursor: pointer;
+
+}
+ /* signup. login */
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 400px;
+}
+.user{
+    height: 40px;
+    width: 230px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.email{
+    height: 40px;
+    width: 230px;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-bottom: 10px;
+}
+.password{
+    height: 40px;
+    width: 230px;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+.signup{
+    height: 40px;
+    width: 230px;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    background-color: rgb(12, 102, 154);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.label{
+    font-weight: bolder;
+}
+ /* signup. login */
+ /* parent Hierarchy */
+ .country{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+ }
+ .zone{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 45px;
+ }
+ .state{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+ }
+ .region{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+ }
+ .mp{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+ }
+ .assembly{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+ }
+ .mandal{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+ }
+ .village{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+ }
+ .edit{
+    height: 35px;
+    width: 90px;
+    background-color: rgb(31, 109, 169);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+ }
+  /* parent Hierarchy */
+  /* sidenav */
+.li:hover{
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+}
+  /* sidenav */
+  /* user */
+
+  /* user */
+
+
+  /* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+  }
+  
+  /* Modal Content */
+  .modalContent {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    height: 550px;
+    overflow-y:scroll;
+    border-radius: 20px;
+    align-items: center;
+  }
+  
+  /* Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .selctuser{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
