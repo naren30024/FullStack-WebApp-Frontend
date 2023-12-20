@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import style from './style.module.css';
+import TopNavBar from './TopNavBar';
+import SidenavBar from './SidenavBar';
 
 export default function Users() {
 
@@ -230,7 +232,14 @@ export default function Users() {
       };
     
       return (
-        <div className="flex justify-center mt-8">
+        <>
+        <div className="w-full fixed top-0 z-10">
+         <TopNavBar/>
+        </div>
+        <div>
+          <SidenavBar/>
+        </div>
+        <div className="flex justify-center mt-8 grid h-screen place-items-center">
                 <div className="w-full lg:w-2/3">
                     <h1 className="text-3xl font-semibold text-center mb-6">Voter List</h1>
                     <div className="flex flex-col gap-4">
@@ -409,6 +418,7 @@ export default function Users() {
           </div>
         </div>
         </div>
+        </>
     
   )
 }
