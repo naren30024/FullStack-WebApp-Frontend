@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
-import style from './style.module.css'
+import style from './style.module.css';
+import TopNavBar from './TopNavBar';
+import SidenavBar from './SidenavBar';
 
 export default function ParentHierarchy() {
   const [options, setOptions] = useState({
@@ -227,21 +229,26 @@ export default function ParentHierarchy() {
     setOptions({ ...options, VILLAGE: selectedVillage });
     const filterVillage = villageList.filter(region => region.id == selectedVillage)
     setReUseData({...reUseData,VILLAGE:villageList});
-    console.log(reUseData)
-    console.log(villageList)
-    console.log(filterVillage)
+    
     window.localStorage.setItem("redata",JSON.stringify(reUseData));
   };
   
 
   return (
-    
+
+    <>
+    <div className="w-full fixed top-0 z-10">
+      <TopNavBar/>
+    </div>
     <div>
-      <ul>
+      <SidenavBar/>
+    </div>
+    <div className='container  p-0 mt-10 grid h-screen place-items-center'>
+      <ul className='grid gap-3'>
         <div>
           <li>
             <label htmlFor="Country">COUNTRY</label>
-            <select className={style.country} name="COUNTRY" id="country" value={options.COUNTRY} onChange={handleCountryChange} disabled={dropdownsDisabled}>
+            <select className={` w-full ${style.country}`} name="COUNTRY" id="country" value={options.COUNTRY} onChange={handleCountryChange} disabled={dropdownsDisabled}>
               <option value="">Select Country</option>
               {countryList.map((country) => (
                 <option key={country.id} value={country.id}>{country.name}</option>
@@ -252,7 +259,7 @@ export default function ParentHierarchy() {
         <div>
           <li>
             <label htmlFor="Zone">ZONE</label>
-            <select className={style.zone} name="ZONE" id="zone" value={options.ZONE} onChange={handleZoneChange} disabled={dropdownsDisabled}>
+            <select className={` w-full ${style.zone}`} name="ZONE" id="zone" value={options.ZONE} onChange={handleZoneChange} disabled={dropdownsDisabled}>
               {options.COUNTRY && (
                 <option value="">Select Zone</option>
               )}
@@ -265,7 +272,7 @@ export default function ParentHierarchy() {
         <div>
           <li>
             <label htmlFor="State">STATE</label>
-            <select className={style.state}name="STATE" id="state" value={options.STATE} onChange={handleStateChange} disabled={dropdownsDisabled}>
+            <select className={` w-full ${style.state}`}name="STATE" id="state" value={options.STATE} onChange={handleStateChange} disabled={dropdownsDisabled}>
               {options.ZONE && (
                 <option value="">Select State</option>
               )}
@@ -341,8 +348,9 @@ export default function ParentHierarchy() {
           </li>
         </div>
       </ul>
-      <button className={style.edit} onClick={handleEdit}>{dropdownsDisabled ? 'Edit' : 'Done'}</button>
+      <button className={`w-full mt-0 px-4 py-2 bg-blue-500 text-white rounded-md ${style.edit}`} onClick={handleEdit}>{dropdownsDisabled ? 'Edit' : 'Done'}</button>
     </div>
+    </>
   );
 }
 
