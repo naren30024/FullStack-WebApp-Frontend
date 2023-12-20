@@ -53,25 +53,27 @@ const Signup = () => {
 
   return (
     <>
-    <div>   
-      <div className={style.center}>
-      <h1>Signup</h1>
+    <div className="flex justify-center items-center h-screen">   
+      <div className="bg-white p-8 rounded shadow-md w-full sm:w-96">
+      <h1 className='text-2xl font-semibold mb-4'>Signup</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label className={style.label}  htmlFor="username">Username</label>
-          <input className={style.user}  type="text" id="username" name="username" value={formData.username} onChange={handleChange} required/>
+        <div className='mb-4'>
+          <label className="block text-gray-700"  htmlFor="username">Username</label>
+          <input className="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"  type="text" id="username" name="username" value={formData.username} onChange={handleChange} required/>
+        </div>
+        <div className='mb-4'>
+          <label className="block text-gray-700" htmlFor="email">Email</label>
+          <input className="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:border-blue-500" type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
         <div>
-          <label className={style.label} htmlFor="email">Email</label>
-          <input className={style.email} type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+          <label className="block text-gray-700" htmlFor="password">Password</label>
+          <input className="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:border-blue-500" type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
-        <div>
-          <label className={style.label}htmlFor="password">Password</label>
-          <input className={style.password} type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
-        </div>
-        <button className={style.signup} type="submit">Signup</button><br />
-        Already have an account ? <Link href="/components/Login">Login</Link>
+        <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 mt-2" type="submit">Signup</button><br />
+        
       </form>
+      <p className='text-gray-600 text-sm mt-4'>Already have an account ? <Link href="/components/Login" className='text-blue-500'>Login</Link></p>
+      
     </div>
     </div>
  
