@@ -3,27 +3,40 @@ import { FaCog, FaAddressBook } from 'react-icons/fa';
 import Users from './Users';
 import ParentHierarchy from './ParentHierarchy';
 import MasterData from './MasterData';
+import Link from 'next/link';
 
 
 export default function TopNavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [settingMenuOpen, setSettingMenuOpen] = useState(false);
-    const contents = ['Parent Hierarchy','masterdata','roles','responsibilities','users','election','survey']
-    let [content, setContent] = useState(<ParentHierarchy />);
+    const contents = [
+        {
+            name:'Parent Hierarchy',
+            link:'/components/ParentHierarchy'
+        },
+        {name:'masterdata',link:'/components/MasterData'},
+        {name:'roles',link:''},
+        {name:'responsibilities',link:''},
+        {name:'users',link:'/components/Users'},
+        {name:'election',link:''},
+        {name:'survey',link:''}
+    ]
+    let [content, setContent] = useState(<Users />);
 
     const contentChange = (cname) => {
         console.log("hello")
-        setContent(<MasterData/>)
+        
         switch(cname){
             case 'Parent Hierarchy':
                 console.log("hey");
-                setContent(<ParentHierarchy/>)
+                setContent(<ParentHierarchy />)
                 break;
             case 'masterdata':
-                setContent(<MasterData/>)
+                console.log("heym");
+                setContent(<MasterData />)
                 break;
             case 'users':
-                setContent(<Users/>)
+                setContent(<Users />)
                 break;
             default:
                 setContent("")
@@ -70,7 +83,7 @@ export default function TopNavBar() {
                         {settingMenuOpen && (
                             <div className="absolute top-20 right-0 mt-0  bg-black rounded-lg p-2">
                                 {contents.map((cname) => (
-                                    <p className="text-white cursor-pointer hover:bg-white hover:text-black" onClick={() => contentChange(cname)}>{cname}</p>
+                                    <p className="text-white cursor-pointer hover:bg-white hover:text-black"><Link href={cname.link}>{cname.name}</Link></p>
                                 ))}
                                 
                                 
@@ -82,11 +95,7 @@ export default function TopNavBar() {
             </div>
         </nav>
         
-        <div className='lgs'>
-            <div className="ml-70 lg:ml-64 w-full p-8 mt-20 flex justify-center items-center  ">
-                {content}
-            </div>
-        </div>
+        
         </>
     );
 }
